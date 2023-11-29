@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-netflixgpt": {
+      "hosting": {
+        "Angular-NetflixGPT": [
+          "angular-netflixgpt"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-netflixgpt"
+  }
+}

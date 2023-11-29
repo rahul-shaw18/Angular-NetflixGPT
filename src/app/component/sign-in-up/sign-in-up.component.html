@@ -1,0 +1,24 @@
+<section class="flex flex-col items-center justify-center h-screen">
+    <div class=" p-10  grid place-self-center w-[400px] bg-black  opacity-[0.75] rounded-lg">
+
+        <form class="flex flex-col gap-6" [formGroup]="credentialForm">
+
+            <h1 class="text-white text-3xl">{{signUp?'Sign Up':'Login'}}</h1>
+
+            <input *ngIf="signUp" class="w-full outline-none bg-[#333] text-white px-5  rounded-sm h-12" type="text"
+                placeholder="Full Name" formControlName="fullName">
+
+            <input class="w-full outline-none bg-[#333] text-white px-5  rounded-sm h-12" type="text"
+                placeholder="Email" formControlName="email">
+
+            <input class="w-full outline-none bg-[#333] text-white px-5  rounded-sm h-12" type="password"
+                placeholder="Password" formControlName="password">
+
+            <p class="text-red-700 font-semibold" [ngClass]="errorMessage ? 'visible':'invisible'">Error</p>
+
+            <button class="w-full bg-red-800 text-white h-12 rounded-sm" [disabled]="credentialForm.invalid" [ngClass]="credentialForm.invalid?'opacity-[0.5]':'opacity-100'"  (click)='handleFormSubmition(signUp)'>{{signUp?'Sign Up':'Login'}}</button>
+
+        </form>
+        <p class="text-white" (click)=" updateFullNameValidators()">{{signUp?'Already a User? Sign In':'New User? Sign Up'}}</p>
+    </div>
+</section>

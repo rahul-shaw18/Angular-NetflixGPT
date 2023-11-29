@@ -1,0 +1,9 @@
+<section>
+    <header class="px-5 flex justify-between items-center bg-transparent">
+        <img class="w-56" [src]="brandLogo" alt="">
+        <div class="flex h-10 gap-5" *ngIf="isUserLoggedIn">
+            <img class="w-10 rounded-sm" [src]="defaultProfilePic" alt="">
+            <button class="bg-red-500 px-6 py-1 rounded-md text-white" (click)="handleSignOut()">Sign out</button>
+        </div>
+    </header>
+</section>
